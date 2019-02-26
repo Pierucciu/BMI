@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+float bmi(float a,float b){return a/(b*b);    
+}
+
+int main()
+{ float z;
+  float weight; 
+  float height; 
+  cout << "What is your weight? \n";
+  cin >> weight ;
+  cout << "What is your height? \n";
+  cin >> height ;
+  z=bmi(weight,height);
+  cout << "My BMI is, " << z << "!\n";
+}
