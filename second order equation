@@ -1,0 +1,24 @@
+// Example program
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+float eq_solver(float a, float b, float c){ float delta=b*b-4*a*c; 
+                                        if (a==0) {if (b==0) cout << "IMPOSSIBLE";  
+                                                   else cout << -c/b;  
+                                                }
+                                        else if (delta < 0) cout << "IMPOSSIBLE";
+                                        else cout << (-b + sqrt(delta))/(2*a) << (-b-sqrt(delta))/(2*a) ;           
+    }
+
+int main()
+{ float r,s,t;
+  cout << "Insert r ";
+  cin >> r;
+  cout << "Insert s ";
+  cin >> s;
+  cout << "Insert t ";
+  cin >> t;
+  cout << eq_solver(r,s,t);  
+}
