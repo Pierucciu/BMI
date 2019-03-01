@@ -1,14 +1,14 @@
-// Example program
 #include <iostream>
 #include <string>
 #include <math.h>
 using namespace std;
 
 float eq_solver(float a, float b, float c){ float delta=b*b-4*a*c; 
-                                        if (a==0) {if (b==0) cout << "IMPOSSIBLE";  
+                                        if (a==0) {if (b==0 & c!=0) cout << "IMPOSSIBLE \n";  
+                                                   else if (b==0 & c==0) cout << "INDETERMINATE \n";    
                                                    else cout << -c/b;  
                                                 }
-                                        else if (delta < 0) cout << "IMPOSSIBLE";
+                                        else if (delta < 0) cout << "IMPOSSIBLE \n";
                                         else cout << (-b + sqrt(delta))/(2*a) << (-b-sqrt(delta))/(2*a) ;           
     }
 
