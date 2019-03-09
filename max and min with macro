@@ -1,0 +1,30 @@
+#define GETMAX
+#define GETMIN
+#if !defined(GETMIN) && !defined(GETMAX)
+    #error At least one has to be defined: GETMAX or GETMIN
+#endif
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a, b, c;
+    cout << "Give three numbers:";
+    cin >> a >> b >> c;
+    #ifdef GETMAX
+        //so we are looking for the biggest number
+        int max;
+        if(a >= b and a >= c) max = a;
+        else if(b >= a and b >= c) max = b;
+        else if(c >= b and c >= a) max = c;
+        cout << "The biggest number is " << max << ".\n";
+    #endif
+    #ifdef GETMIN
+        // so we ar looking for the smallest number
+        int min;
+        if(a <= b and a <= c) min = a;
+        else if(b <= a and b <= c) min = b;
+        else if(c <= b and c <= a) min = c;
+        cout << "The smallest number is " << min << ".\n";
+    #endif
+}
