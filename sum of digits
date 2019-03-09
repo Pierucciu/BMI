@@ -10,12 +10,14 @@ float sum_digit(int n){
     return sum;
 }
 
-int main(){int i;
-    do{ int s=0;
+int main(){
+    int s=0;
+    int i;
+    do{
        cout << "Enter an integer number \n";
        cin >> i;
        if(sum_digit(i)>s) s=sum_digit(i); 
-       return s;
       }
-    while(i!=0)
+    while(i!=0) ;
+    cout <<"The highest digits sum is" << s << "\n";
 }
