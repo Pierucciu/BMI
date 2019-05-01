@@ -1,0 +1,37 @@
+#include<cmath>
+#include<functional>
+
+using namespace std;
+
+double find_root(std::function<double(double x)> fun, double a, double b, double eps = 0.1) {
+  if ( fun(a) * fun(b) < 0){
+    double x; // current point in x axis
+    double e = (b - a) / 2; // current eps
+    while ( abs(e) > eps ) { //diffrence bigger than dreamed eps
+      x = (a + b) / 2;
+      if ( abs(fun(x)) == 0 ){ // getting exactly zero of a function
+        return x;
+      }
+      if ( fun(x) * fun(a) < 0 ){ // taking left range
+        b = x;
+      }
+      else { // taking right range
+        a = x;
+      }
+      e = (b - a) / 2; // changing current eps
+    }
+    return x;
+  }
+  else {
+    std::cout << "Przedziały nie mają miejsc zerowych lub mają parzystą ilość" << std::endl;
+  }
+}
+
+int main() {
+  int A = 2;
+  int B = 4;
+  std::cout << "Miejsce zerowe: " << find_root([=](double x){ return -A*x*x*x + B*x*x - 10;}, -4, 4, 0.01) << std::endl;
+
+  int n = 1;
+  std::cout << "Miejsce zerowe: " << find_root([=](double x){ return sin(n*x);}, -1, 0.4, 0.01) << std::endl;
+}
